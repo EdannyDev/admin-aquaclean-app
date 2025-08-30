@@ -47,7 +47,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('https://backend-aquaclean.onrender.com/api/user/register', {
+      const response = await axios.post('http://localhost:5000/api/user/register', {
         name,
         email,
         password,

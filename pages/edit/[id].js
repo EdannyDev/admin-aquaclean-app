@@ -35,7 +35,7 @@ const EditForm = () => {
     if (id) {
       const fetchContact = async () => {
         try {
-          const response = await axios.get(`https://backend-aquaclean.onrender.com/api/contact/${id}`);
+          const response = await axios.get(`http://localhost:5000/api/contact/${id}`);
           setFormData(response.data);
         } catch (error) {
           console.error('Error al obtener el contacto:', error);
@@ -54,7 +54,7 @@ const EditForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://backend-aquaclean.onrender.com/api/contact/${id}`, formData);
+      await axios.put(`http://localhost:5000/api/contact/${id}`, formData);
       setNotification({ type: 'success', message: 'Contacto actualizado con éxito.' });
   
       setTimeout(() => {
