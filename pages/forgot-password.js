@@ -40,7 +40,7 @@ const ForgotPassword = () => {
     setErrorMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/user/forgot-password', { email });
+      const response = await axios.post('https://backend-aquaclean-c2kg.onrender.com/api/user/forgot-password', { email });
 
       localStorage.setItem('resetToken', response.data.resetToken);
       setToken(response.data.resetToken);
@@ -67,7 +67,7 @@ const ForgotPassword = () => {
         return;
       }
 
-      await axios.post('http://localhost:5000/api/user/reset-password', {
+      await axios.post('https://backend-aquaclean-c2kg.onrender.com/api/user/reset-password', {
         token: storedToken,
         newPassword,
       });

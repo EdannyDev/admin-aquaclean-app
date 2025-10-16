@@ -48,7 +48,7 @@ const TableComponent = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/contact');
+      const response = await axios.get('https://backend-aquaclean-c2kg.onrender.com/api/contact');
       const newContacts = response.data;
       const newContactCount = newContacts.length;
       const storedContactCount = localStorage.getItem('contactCount') || 0;
@@ -106,7 +106,7 @@ const TableComponent = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/contact/${contactToDelete}`);
+      await axios.delete(`https://backend-aquaclean-c2kg.onrender.com/api/contact/${contactToDelete}`);
       fetchContacts();
       setIsModalOpen(false);
 

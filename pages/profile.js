@@ -26,7 +26,7 @@ const Profile = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/user/profile', {
+        const response = await axios.get('https://backend-aquaclean-c2kg.onrender.com/api/user/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -76,7 +76,7 @@ const Profile = () => {
         return;
       }
 
-      await axios.put('http://localhost:5000/api/user/profile',{ ...userData },
+      await axios.put('https://backend-aquaclean-c2kg.onrender.com/api/user/profile',{ ...userData },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -126,7 +126,7 @@ const Profile = () => {
         return;
       }
 
-      await axios.delete('http://localhost:5000/api/user/delete-account', {
+      await axios.delete('https://backend-aquaclean-c2kg.onrender.com/api/user/delete-account', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
